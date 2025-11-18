@@ -40,6 +40,18 @@ const Projects = () => {
       codeUrl: "https://github.com/SpySparsh/MyShop", // <-- ADD THIS
     },
     {
+      title: "Live Search Scraper",
+      description:
+        "Real-time search engine scraper using Puppeteer and Node.js. Features a glassmorphic UI, anti-bot detection strategies, and a custom-built REST API.",
+      icon: Search,
+      gradient: "from-emerald-900 to-gray-900", // Green/Emerald theme for this one
+      iconColor: "text-emerald-300",
+      hoverGlow: "hover:shadow-emerald-900/20",
+      tags: ["Puppeteer", "Node.js", "Express", "Docker"],
+      liveUrl: "https://web-scraper-k3idijaj1-sparsh-sharmas-projects-d06435ee.vercel.app/", // REPLACE with your Vercel URL
+      codeUrl: "https://github.com/SpySparsh/Web-Scraper", // REPLACE with your GitHub URL
+    },
+    {
       title: "Multimodal AI Diagnosis",
       description:
         "Dual-stream CNN-MLP model in PyTorch fusing X-rays with patient metadata. Integrated Grad-CAM & SHAP for explainability.",
