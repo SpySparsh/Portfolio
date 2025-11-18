@@ -1,8 +1,32 @@
-import { LineChart, Code2, ShoppingBag, Activity } from "lucide-react";
-import { Button } from "./ui/button";
+import { LineChart, Code2, ShoppingBag, Activity, Search } from "lucide-react"; 
+
+// Simple Button component to replace the missing import
+const Button = ({ children, className = "", variant, ...props }) => {
+  const baseStyles = "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 px-4 py-2";
+  // If variant is outline, add border logic, otherwise rely on passed className or defaults
+  const variantStyles = variant === "outline" ? "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground" : "bg-primary text-primary-foreground shadow hover:bg-primary/90";
+  
+  return (
+    <button className={`${baseStyles} ${className}`} {...props}>
+      {children}
+    </button>
+  );
+};
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Live Search Scraper",
+      description:
+        "Real-time search engine scraper using Puppeteer and Node.js. Features a glassmorphic UI, anti-bot detection strategies, and a custom-built REST API.",
+      icon: Search,
+      gradient: "from-emerald-900 to-gray-900", 
+      iconColor: "text-emerald-300",
+      hoverGlow: "hover:shadow-emerald-900/20",
+      tags: ["Puppeteer", "Node.js", "Express", "Docker"],
+      liveUrl: "https://your-frontend-url.vercel.app/", // REPLACE with your Vercel URL
+      codeUrl: "https://github.com/yourusername/search-scraper", // REPLACE with your GitHub URL
+    },
     {
       title: "Real-Time Stock Screener",
       description:
@@ -12,8 +36,8 @@ const Projects = () => {
       iconColor: "text-purple-300",
       hoverGlow: "hover:shadow-purple-900/20",
       tags: ["React", "Node.js", "WebSockets", "Alpaca API"],
-      liveUrl: "https://stock-screener-topaz.vercel.app/", // <-- ADD THIS
-      codeUrl: "https://github.com/SpySparsh/Stock-Screener", // <-- ADD THIS
+      liveUrl: "https://stock-screener-topaz.vercel.app/",
+      codeUrl: "https://github.com/SpySparsh/Stock-Screener",
     },
     {
       title: "Collaborative Code Editor",
@@ -24,8 +48,8 @@ const Projects = () => {
       iconColor: "text-blue-300",
       hoverGlow: "hover:shadow-blue-900/20",
       tags: ["React", "Node.js", "Redis", "WebContainer"],
-      liveUrl: "https://ai-project-collabrator-3875ox6jc.vercel.app/", // <-- ADD THIS
-      codeUrl: "https://github.com/SpySparsh/AI-Project-Collabrator", // <-- ADD THIS
+      liveUrl: "https://ai-project-collabrator-3875ox6jc.vercel.app/",
+      codeUrl: "https://github.com/SpySparsh/AI-Project-Collabrator",
     },
     {
       title: "Full-Stack E-Commerce",
@@ -36,20 +60,8 @@ const Projects = () => {
       iconColor: "text-indigo-300",
       hoverGlow: "hover:shadow-indigo-900/20",
       tags: ["MongoDB", "Express", "React", "Node.js", "Razorpay"],
-      liveUrl: "https://my-shop-p23q.vercel.app/", // <-- ADD THIS
-      codeUrl: "https://github.com/SpySparsh/MyShop", // <-- ADD THIS
-    },
-    {
-      title: "Live Search Scraper",
-      description:
-        "Real-time search engine scraper using Puppeteer and Node.js. Features a glassmorphic UI, anti-bot detection strategies, and a custom-built REST API.",
-      icon: Search,
-      gradient: "from-emerald-900 to-gray-900", // Green/Emerald theme for this one
-      iconColor: "text-emerald-300",
-      hoverGlow: "hover:shadow-emerald-900/20",
-      tags: ["Puppeteer", "Node.js", "Express", "Docker"],
-      liveUrl: "https://web-scraper-k3idijaj1-sparsh-sharmas-projects-d06435ee.vercel.app/", // REPLACE with your Vercel URL
-      codeUrl: "https://github.com/SpySparsh/Web-Scraper", // REPLACE with your GitHub URL
+      liveUrl: "https://my-shop-p23q.vercel.app/",
+      codeUrl: "https://github.com/SpySparsh/MyShop",
     },
     {
       title: "Multimodal AI Diagnosis",
@@ -60,8 +72,8 @@ const Projects = () => {
       iconColor: "text-pink-300",
       hoverGlow: "hover:shadow-pink-900/20",
       tags: ["PyTorch", "CNN", "Pandas", "SHAP"],
-      liveUrl: "https://your-live-demo-link.com", // <-- ADD THIS
-      codeUrl: "https://github.com/SpySparsh/Multimodal-Disease-Classification-on-Clinical-Images-and-Metadata/tree/master", // <-- ADD THIS
+      liveUrl: "https://your-live-demo-link.com",
+      codeUrl: "https://github.com/SpySparsh/Multimodal-Disease-Classification-on-Clinical-Images-and-Metadata/tree/master",
     },
   ];
 
@@ -115,7 +127,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="flex-1"
                   >
-                    <Button className="w-full bg-gradient-to-r from-primary to-secondary text-sm">
+                    <Button className="w-full bg-gradient-to-r from-primary to-secondary text-sm text-white">
                       Live Demo
                     </Button>
                   </a>
