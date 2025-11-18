@@ -23,8 +23,8 @@ const Projects = () => {
       iconColor: "text-emerald-300",
       hoverGlow: "hover:shadow-emerald-900/20",
       tags: ["Puppeteer", "Node.js", "Express", "Docker"],
-      liveUrl: "https://your-frontend-url.vercel.app/", // Update with your Vercel URL
-      codeUrl: "https://github.com/yourusername/search-scraper", // Update with your GitHub URL
+      liveUrl: "https://web-scraper-sandy.vercel.app/", // Update with your Vercel URL
+      codeUrl: "https://github.com/SpySparsh/Web-Scraper", // Update with your GitHub URL
     },
     {
       title: "Real-Time Stock Screener",
